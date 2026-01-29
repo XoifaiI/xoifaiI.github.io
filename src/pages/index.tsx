@@ -1,62 +1,181 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
+import CodeBlock from '@theme/CodeBlock';
+import { Lock, Zap, Shield, Atom } from 'lucide-react';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+const heroCode = `local Crypto = require("@daily3014/cryptography")
+
+-- Hash
+local Hash = Crypto.Hashing.Blake3.Digest(Data)
+
+-- Encrypt
+local Ciphertext, Tag = Crypto.Encryption.AEAD.Encrypt(
+    Data, Key, Nonce
+)
+
+-- Sign
+local Signature = Crypto.Verification.EdDSA.Sign(
+    Message, SecretKey, PublicKey
+)`;
+
+function HeroSection() {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
+    <div className="hero-container">
+      <div className="hero-content">
+        <h1 className="hero-title">
+          <span className="hero-gradient">rbx-cryptography</span>
+        </h1>
+        <p className="hero-subtitle">
+          The fastest cryptography library for Roblox
+        </p>
+        <div className="hero-buttons">
+          <Link className="hero-button primary" to="/docs/intro">
             Get Started
           </Link>
-          <Link
-            className="button button--outline button--secondary button--lg"
-            style={{marginLeft: '1rem'}}
-            href="https://github.com/daily3014/rbx-cryptography">
+          <Link className="hero-button secondary" href="https://github.com/daily3014/rbx-cryptography">
             GitHub
           </Link>
         </div>
       </div>
-    </header>
+      <div className="hero-code">
+        <CodeBlock language="lua">{heroCode}</CodeBlock>
+      </div>
+    </div>
   );
 }
 
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+function FeatureCard({ icon: Icon, title, description }) {
   return (
-    <Layout
-      title="Home"
-      description="The fastest cryptography library for Roblox. Pure Luau implementations of SHA-2, SHA-3, BLAKE, ChaCha20-Poly1305, AES-GCM, Ed25519, X25519, and more.">
-      <HomepageHeader />
-      <main>
-        <div className="container" style={{padding: '2rem 0'}}>
-          <div className="row">
-            <div className="col col--4">
-              <h3>Comprehensive</h3>
-              <p>SHA-2, SHA-3, BLAKE, HMAC, ChaCha20-Poly1305, AES-GCM, Ed25519, X25519, ML-DSA, ML-KEM, and more.</p>
-            </div>
-            <div className="col col--4">
-              <h3>Fast</h3>
-              <p>Optimized for Luau with native compilation support. The fastest pure-Luau crypto library available.</p>
-            </div>
-            <div className="col col--4">
-              <h3>Secure</h3>
-              <p>Constant time operations where feasible. Builtin CSPRNG. Postquantum algorithms included. Wycheproof tests included.</p>
-            </div>
-          </div>
+    <div className="feature-card">
+      <div className="feature-icon">
+        <Icon size={32} strokeWidth={1.5} />
+      </div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+}
+
+function FeaturesSection() {
+  return (
+    <div className="features-section">
+      <FeatureCard
+        icon={Lock}
+        title="Comprehensive"
+        description="SHA2, SHA3, BLAKE, HMAC, ChaCha20 Poly1305, AES GCM, Ed25519, X25519, ML DSA, ML KEM"
+      />
+      <FeatureCard
+        icon={Zap}
+        title="Blazing Fast"
+        description="Optimized for Luau with native compilation. The fastest pure-Luau crypto library."
+      />
+      <FeatureCard
+        icon={Shield}
+        title="Secure"
+        description="Constanttime operations. Builtin CSPRNG. Post quantum algorithms. Wycheproof tested."
+      />
+      <FeatureCard
+        icon={Atom}
+        title="Post Quantum Ready"
+        description="ML DSA and ML KEM implementations for quantum resistant signatures and key exchange."
+      />
+    </div>
+  );
+}
+
+function AlgorithmsSection() {
+  return (
+    <div className="algorithms-section">
+      <h2>Everything You Need</h2>
+      <div className="algorithm-grid">
+        <div className="algorithm-category">
+          <h4>Hashing</h4>
+          <ul>
+            <li>SHA 224/256/384/512</li>
+            <li>SHA3 224/256/384/512</li>
+            <li>BLAKE2b, BLAKE3</li>
+            <li>HMAC, KMAC</li>
+          </ul>
         </div>
+        <div className="algorithm-category">
+          <h4>Encryption</h4>
+          <ul>
+            <li>ChaCha20 Poly1305</li>
+            <li>XChaCha20 Poly1305</li>
+            <li>AES 128/192/256 GCM</li>
+            <li>Simon, Speck</li>
+          </ul>
+        </div>
+        <div className="algorithm-category">
+          <h4>Signatures</h4>
+          <ul>
+            <li>Ed25519</li>
+            <li>ML DSA 44/65/87</li>
+          </ul>
+        </div>
+        <div className="algorithm-category">
+          <h4>Key Exchange</h4>
+          <ul>
+            <li>X25519</li>
+            <li>ML KEM 512/768/1024</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function InstallSection() {
+  return (
+    <div className="install-section">
+      <h2>Quick Install</h2>
+      <div className="install-options">
+        <div className="install-option">
+          <h4>Wally</h4>
+          <CodeBlock language="toml">
+            {`Cryptography = "daily3014/cryptography@3.0.1"`}
+          </CodeBlock>
+        </div>
+        <div className="install-option">
+          <h4>Pesde</h4>
+          <CodeBlock language="bash">
+            {`pesde add daily3014/cryptography`}
+          </CodeBlock>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DevelopersSection() {
+  return (
+    <div className="developers-section">
+      <h2>Developers</h2>
+      <div className="developers-grid">
+        <a href="https://github.com/daily3014" className="developer-card">
+          <img src="https://github.com/daily3014.png" alt="daily3014" />
+          <span>daily3014</span>
+        </a>
+        <a href="https://github.com/XoifaiI" className="developer-card">
+          <img src="https://github.com/XoifaiI.png" alt="Xoifail" />
+          <span>Xoifail</span>
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export default function Home() {
+  const { siteConfig } = useDocusaurusContext();
+  return (
+    <Layout title="Home" description={siteConfig.tagline}>
+      <main className="homepage">
+        <HeroSection />
+        <FeaturesSection />
+        <AlgorithmsSection />
+        <InstallSection />
+        <DevelopersSection />
       </main>
     </Layout>
   );
