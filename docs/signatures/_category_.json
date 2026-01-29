@@ -1,0 +1,8 @@
+{
+  "label": "Signatures and Key Exchange",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Digital signatures for authenticity, key exchange for establishing shared secrets."
+  }
+}

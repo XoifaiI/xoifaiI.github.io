@@ -1,0 +1,8 @@
+{
+  "label": "Utilities",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Random number generation, encoding, and checksums."
+  }
+}

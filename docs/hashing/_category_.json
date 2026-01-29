@@ -1,0 +1,8 @@
+{
+  "label": "Hashing",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Hash functions for data integrity, MACs, and key derivation."
+  }
+}
