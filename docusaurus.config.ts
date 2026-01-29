@@ -104,6 +104,10 @@ const config: Config = {
               label: 'Wally',
               href: 'https://wally.run/package/daily3014/cryptography',
             },
+            {
+              label: 'Pesde Package',
+              href: 'https://pesde.dev/packages/daily3014/cryptography',
+            }
           ],
         },
       ],
