@@ -60,16 +60,28 @@
 
 .hero-code {
   flex: 1;
+  min-width: 500px;
   background: #1a1a2e;
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid #333;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
+  overflow-x: auto;
+  text-align: left;
 }
 
-.hero-code>div {
-  margin: 0;
+.hero-code > div {
+  margin: 0 !important;
+}
+
+.hero-code [class*="codeBlock"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.hero-code [class*="copyButton"] {
+  display: none !important;
 }
 
 .hero-code pre {
@@ -77,6 +89,13 @@
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
+  white-space: pre !important;
+  text-align: left !important;
+}
+
+.hero-code code {
+  white-space: pre !important;
+  text-align: left !important;
 }
 
 .developers-section {
@@ -237,17 +256,91 @@
   .hero-container {
     flex-direction: column;
     text-align: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
 
   .hero-buttons {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 
   .hero-code {
     width: 100%;
+    min-width: unset;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .hero-code pre,
+  .hero-code code {
+    white-space: pre !important;
+    word-wrap: normal !important;
+  }
+
+  .features-section {
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .algorithms-section {
+    padding: 2rem 1rem;
+  }
+
+  .algorithm-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .algorithm-category {
+    padding: 1rem;
+  }
+
+  .install-section {
+    padding: 2rem 1rem;
+  }
+
+  .install-options {
+    grid-template-columns: 1fr;
+  }
+
+  .developers-section {
+    padding: 2rem 1rem;
+  }
+
+  .developers-grid {
+    gap: 2rem;
+  }
+
+  .developer-card img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .algorithm-grid {
+    grid-template-columns: 1fr;
   }
 }

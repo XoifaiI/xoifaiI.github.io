@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
@@ -10,14 +11,10 @@ const heroCode = `local Crypto = require("@daily3014/cryptography")
 local Hash = Crypto.Hashing.Blake3.Digest(Data)
 
 -- Encrypt
-local Ciphertext, Tag = Crypto.Encryption.AEAD.Encrypt(
-    Data, Key, Nonce
-)
+local Ciphertext, Tag = Crypto.Encryption.AEAD.Encrypt(Data, Key, Nonce)
 
 -- Sign
-local Signature = Crypto.Verification.EdDSA.Sign(
-    Message, SecretKey, PublicKey
-)`;
+local Signature = Crypto.Verification.EdDSA.Sign(Message, SecretKey, PublicKey)`;
 
 function HeroSection() {
   return (
