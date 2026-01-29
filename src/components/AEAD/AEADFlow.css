@@ -1,21 +1,21 @@
-.reactflow-wrapper {
+.aead-flow-wrapper {
   width: 100%;
   height: 280px;
   pointer-events: none;
 }
 
-.reactflow-wrapper .react-flow__handle {
+.aead-flow-wrapper .react-flow__handle {
   opacity: 0;
 }
 
 @media (max-width: 768px) {
-  .reactflow-wrapper {
-    height: 220px;
+  .aead-flow-wrapper {
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
-  .reactflow-wrapper {
-    height: 180px;
+  .aead-flow-wrapper {
+    height: 380px;
   }
 }

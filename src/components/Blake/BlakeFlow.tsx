@@ -28,16 +28,19 @@ const edges = [
 ];
 
 const verticalNodes = (s, dark) => [
-  { id: 'ms', position: { x: 100, y: 0 }, data: { label: 'Master Secret' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
+  { id: 'ms', position: { x: 90, y: 0 }, data: { label: 'Master Secret' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
+  
   { id: 'c1', position: { x: 0, y: 80 }, data: { label: 'Context: encryption' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
-  { id: 'c2', position: { x: 0, y: 240 }, data: { label: 'Context: mac' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
-  { id: 'c3', position: { x: 0, y: 400 }, data: { label: 'Context: auth' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
-  { id: 'd1', position: { x: 100, y: 120 }, data: { label: 'DeriveKey' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'd2', position: { x: 100, y: 280 }, data: { label: 'DeriveKey' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'd3', position: { x: 100, y: 440 }, data: { label: 'DeriveKey' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'ek', position: { x: 100, y: 180 }, data: { label: 'Encryption Key' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
-  { id: 'mk', position: { x: 100, y: 340 }, data: { label: 'MAC Key' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
-  { id: 'ak', position: { x: 100, y: 500 }, data: { label: 'Auth Key' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
+  { id: 'd1', position: { x: 200, y: 80 }, data: { label: 'DeriveKey' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'ek', position: { x: 200, y: 150 }, data: { label: 'Encryption Key' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
+
+  { id: 'c2', position: { x: 0, y: 220 }, data: { label: 'Context: mac' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
+  { id: 'd2', position: { x: 200, y: 220 }, data: { label: 'DeriveKey' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'mk', position: { x: 200, y: 290 }, data: { label: 'MAC Key' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
+
+  { id: 'c3', position: { x: 0, y: 360 }, data: { label: 'Context: auth' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
+  { id: 'd3', position: { x: 200, y: 360 }, data: { label: 'DeriveKey' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'ak', position: { x: 200, y: 430 }, data: { label: 'Auth Key' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
 ];
 
 const verticalEdges = [

@@ -10,12 +10,12 @@
 
 @media (max-width: 768px) {
   .blake-flow-wrapper {
-    height: 260px;
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
   .blake-flow-wrapper {
-    height: 220px;
+    height: 380px;
   }
 }

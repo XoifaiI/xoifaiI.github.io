@@ -71,14 +71,14 @@ const sessionEdges = [
 ];
 
 const sessionVerticalNodes = (s, dark) => [
-  { id: 'mask', position: { x: 60, y: 0 }, data: { label: 'Mask' }, style: s(dark ? '#6366f1' : '#818cf8'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'public', position: { x: 40, y: 80 }, data: { label: 'Get Public Key' }, style: s(dark ? '#6366f1' : '#818cf8'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'peer', position: { x: 40, y: 160 }, data: { label: 'PeerPublic' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
-  { id: 'exchange', position: { x: 60, y: 240 }, data: { label: 'Exchange' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'shared', position: { x: 40, y: 320 }, data: { label: 'SharedSecret' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'context', position: { x: 40, y: 400 }, data: { label: 'Context' }, style: s(dark ? '#f59e0b' : '#fbbf24'), sourcePosition: Position.Bottom },
-  { id: 'blake3', position: { x: 30, y: 480 }, data: { label: 'Blake3.DeriveKey' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'key', position: { x: 50, y: 560 }, data: { label: 'SessionKey' }, style: s(dark ? '#a3a322' : '#d4d462'), targetPosition: Position.Top },
+  { id: 'mask', position: { x: 0, y: 0 }, data: { label: 'Mask' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
+  { id: 'public', position: { x: 160, y: 0 }, data: { label: 'Get Public Key' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
+  { id: 'peer', position: { x: 160, y: 100 }, data: { label: 'PeerPublic' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
+  { id: 'exchange', position: { x: 80, y: 200 }, data: { label: 'Exchange' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'shared', position: { x: 0, y: 300 }, data: { label: 'SharedSecret' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'context', position: { x: 160, y: 300 }, data: { label: 'Context' }, style: s(dark ? '#f59e0b' : '#fbbf24'), sourcePosition: Position.Bottom },
+  { id: 'blake3', position: { x: 60, y: 400 }, data: { label: 'Blake3.DeriveKey' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'key', position: { x: 70, y: 500 }, data: { label: 'SessionKey' }, style: s(dark ? '#a3a322' : '#d4d462'), targetPosition: Position.Top },
 ];
 
 const sessionVerticalEdges = [

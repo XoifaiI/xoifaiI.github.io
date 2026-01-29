@@ -29,16 +29,16 @@ const edges = [
 ];
 
 const verticalNodes = (s, dark) => [
-  { id: 'gen', position: { x: 60, y: 0 }, data: { label: 'GenerateKeys' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
-  { id: 'pk', position: { x: 0, y: 80 }, data: { label: 'PublicKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'sk', position: { x: 140, y: 80 }, data: { label: 'SecretKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'enc', position: { x: 0, y: 160 }, data: { label: 'Encapsulate' }, style: s(dark ? '#6366f1' : '#818cf8'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'ss1', position: { x: 0, y: 240 }, data: { label: 'SharedSecret' }, style: s(dark ? '#6366f1' : '#818cf8'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'ct', position: { x: 140, y: 240 }, data: { label: 'Ciphertext' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'encrypt', position: { x: 0, y: 320 }, data: { label: 'Encrypt' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top },
-  { id: 'dec', position: { x: 140, y: 160 }, data: { label: 'Decapsulate' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'ss2', position: { x: 140, y: 320 }, data: { label: 'SharedSecret' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'decrypt', position: { x: 140, y: 400 }, data: { label: 'Decrypt' }, style: s(dark ? '#16a34a' : '#22c55e'), targetPosition: Position.Top },
+  { id: 'gen', position: { x: 80, y: 0 }, data: { label: 'GenerateKeys' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
+  { id: 'pk', position: { x: 0, y: 70 }, data: { label: 'PublicKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'sk', position: { x: 180, y: 70 }, data: { label: 'SecretKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'enc', position: { x: 0, y: 140 }, data: { label: 'Encapsulate' }, style: s(dark ? '#6366f1' : '#818cf8'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'dec', position: { x: 180, y: 140 }, data: { label: 'Decapsulate' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'ss1', position: { x: 0, y: 210 }, data: { label: 'SharedSecret' }, style: s(dark ? '#6366f1' : '#818cf8'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'ct', position: { x: 180, y: 210 }, data: { label: 'Ciphertext' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'encrypt', position: { x: 0, y: 280 }, data: { label: 'Encrypt' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top },
+  { id: 'ss2', position: { x: 180, y: 280 }, data: { label: 'SharedSecret' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'decrypt', position: { x: 180, y: 350 }, data: { label: 'Decrypt' }, style: s(dark ? '#16a34a' : '#22c55e'), targetPosition: Position.Top },
 ];
 
 const verticalEdges = [

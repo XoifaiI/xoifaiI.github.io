@@ -10,12 +10,12 @@
 
 @media (max-width: 768px) {
   .mlkem-flow-wrapper {
-    height: 240px;
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
   .mlkem-flow-wrapper {
-    height: 200px;
+    height: 380px;
   }
 }

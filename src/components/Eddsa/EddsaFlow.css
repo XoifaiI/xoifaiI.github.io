@@ -10,12 +10,12 @@
 
 @media (max-width: 768px) {
   .sign-encrypt-flow-wrapper {
-    height: 220px;
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
   .sign-encrypt-flow-wrapper {
-    height: 180px;
+    height: 380px;
   }
 }

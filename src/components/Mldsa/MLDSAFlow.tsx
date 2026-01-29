@@ -26,14 +26,14 @@ const edges = [
 ];
 
 const verticalNodes = (s, dark) => [
-  { id: 'gen', position: { x: 60, y: 0 }, data: { label: 'GenerateKeys' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
-  { id: 'sk', position: { x: 0, y: 80 }, data: { label: 'SecretKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'pk', position: { x: 140, y: 80 }, data: { label: 'PublicKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'msg', position: { x: 60, y: 160 }, data: { label: 'Message' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
-  { id: 'sign', position: { x: 60, y: 240 }, data: { label: 'Sign' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'sig', position: { x: 60, y: 320 }, data: { label: 'Signature' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'verify', position: { x: 60, y: 400 }, data: { label: 'Verify' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'valid', position: { x: 60, y: 480 }, data: { label: 'Valid' }, style: s(dark ? '#16a34a' : '#22c55e'), targetPosition: Position.Top },
+  { id: 'gen', position: { x: 90, y: 0 }, data: { label: 'GenerateKeys' }, style: s(dark ? '#22c55e' : '#4ade80'), sourcePosition: Position.Bottom },
+  { id: 'sk', position: { x: 0, y: 70 }, data: { label: 'SecretKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'pk', position: { x: 180, y: 70 }, data: { label: 'PublicKey' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'msg', position: { x: 90, y: 140 }, data: { label: 'Message' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
+  { id: 'sign', position: { x: 90, y: 200 }, data: { label: 'Sign' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'sig', position: { x: 90, y: 260 }, data: { label: 'Signature' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'verify', position: { x: 90, y: 320 }, data: { label: 'Verify' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'valid', position: { x: 90, y: 380 }, data: { label: 'Valid' }, style: s(dark ? '#16a34a' : '#22c55e'), targetPosition: Position.Top },
 ];
 
 const verticalEdges = [

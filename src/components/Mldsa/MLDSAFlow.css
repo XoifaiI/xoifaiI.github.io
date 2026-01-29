@@ -10,12 +10,12 @@
 
 @media (max-width: 768px) {
   .mldsa-flow-wrapper {
-    height: 220px;
+    height: 420px;
   }
 }
 
 @media (max-width: 480px) {
   .mldsa-flow-wrapper {
-    height: 180px;
+    height: 380px;
   }
 }

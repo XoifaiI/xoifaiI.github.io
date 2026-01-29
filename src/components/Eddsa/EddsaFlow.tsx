@@ -21,11 +21,11 @@ const edges = [
 
 const verticalNodes = (s, dark) => [
   { id: 'message', position: { x: 0, y: 0 }, data: { label: 'Message' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
-  { id: 'sign', position: { x: 140, y: 0 }, data: { label: 'Sign' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
-  { id: 'encrypt', position: { x: 50, y: 80 }, data: { label: 'Encrypt' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'decrypt', position: { x: 50, y: 160 }, data: { label: 'Decrypt' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'verify', position: { x: 50, y: 240 }, data: { label: 'Verify' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
-  { id: 'valid', position: { x: 50, y: 320 }, data: { label: 'Valid' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
+  { id: 'sign', position: { x: 160, y: 0 }, data: { label: 'Sign' }, style: s(dark ? '#6366f1' : '#818cf8'), sourcePosition: Position.Bottom },
+  { id: 'encrypt', position: { x: 60, y: 100 }, data: { label: 'Encrypt' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'decrypt', position: { x: 60, y: 200 }, data: { label: 'Decrypt' }, style: s(dark ? '#8b5cf6' : '#a78bfa'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'verify', position: { x: 60, y: 300 }, data: { label: 'Verify' }, style: s(dark ? '#22c55e' : '#4ade80'), targetPosition: Position.Top, sourcePosition: Position.Bottom },
+  { id: 'valid', position: { x: 60, y: 400 }, data: { label: 'Valid' }, style: s(dark ? '#f59e0b' : '#fbbf24'), targetPosition: Position.Top },
 ];
 
 const verticalEdges = [
