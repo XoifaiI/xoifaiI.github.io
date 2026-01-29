@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # ML DSA (Post Quantum Signatures)
 
-import MldsaFlow from '@site/src/components/Mldsa/MldsaFlow';
+import MldsaFlow from '@site/src/components/Mldsa/MLDSAFlow';
 
 Module Lattice Digital Signature Algorithm. This is the NIST post quantum signature standard, formerly known as Dilithium. Use this when you need signatures that will remain secure even against quantum computers.
 ```luau

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # ML KEM (Post Quantum Key Exchange)
 
-import MlkemFlow from '@site/src/components/Mlkem/MlkemFlow';
+import MlkemFlow from '@site/src/components/Mlkem/MLKEMFlow';
 
 Module Lattice Key Encapsulation Mechanism. This is the NIST post quantum key exchange standard, formerly known as Kyber. Use this to establish shared secrets that will remain secure against quantum computers.
 

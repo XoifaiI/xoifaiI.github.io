@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # HMAC
 
-import HmacFlow from '@site/src/components/Hmac/HmacFlow';
+import HmacFlow from '@site/src/components/Hmac/HMACFlow';
 
 Hash based Message Authentication Code. The standard way to create a MAC from a hash function when you need compatibility with existing systems.
 
