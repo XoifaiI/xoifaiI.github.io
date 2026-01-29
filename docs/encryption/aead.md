@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # ChaCha20 Poly1305 (AEAD)
 
+import AEADFlow from '@site/src/components/AEAD/AEADFlow';
+
 This is what you should use for symmetric encryption. It is authenticated encryption with associated data (AEAD), meaning tampered ciphertext will fail to decrypt. You get confidentiality and integrity in one package.
 
 ```luau
@@ -54,32 +56,8 @@ else
     warn("Authentication failed, data was tampered")
 end
 ```
-```mermaid
-flowchart LR
-    subgraph Encrypt
-        P[Plaintext] --> E[AEAD.Encrypt]
-        K[Key] --> E
-        N[Nonce] --> E
-        E --> C[Ciphertext + Tag]
-    end
-    
-    C --> D
-    N --> D
-    
-    subgraph Decrypt
-        K2[Key] --> D[AEAD.Decrypt]
-        D --> P2[Plaintext]
-    end
-    
-    style P fill:#3c3c5a
-    style K fill:#3c5a3c
-    style N fill:#3c5a3c
-    style E fill:#503c50
-    style C fill:#5a4632
-    style K2 fill:#3c5a3c
-    style D fill:#503c50
-    style P2 fill:#2a5a2a
-```
+
+<AEADFlow />
 
 :::warning Always Check for nil
 If `Decrypt` returns `nil`, the ciphertext was modified or the wrong key/nonce was used. Never try to use the data.

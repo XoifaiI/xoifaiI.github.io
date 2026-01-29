@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # HMAC
 
+import HmacFlow from '@site/src/components/Hmac/HmacFlow';
+
 Hash based Message Authentication Code. The standard way to create a MAC from a hash function when you need compatibility with existing systems.
 
 ```luau
@@ -41,26 +43,8 @@ local HexMac2, RawMac2 = HMAC(Message, Key, Blake3Digest, 64, false)
 HMAC computes `H((K ⊕ opad) || H((K ⊕ ipad) || M))` where K is the key (padded or hashed to block size), opad is 0x5c repeated, ipad is 0x36 repeated, and M is your message.
 
 Keys longer than the hash's block size get hashed first. Keys shorter than the block size are zero padded. For best security, use a key at least as long as the hash output.
-```mermaid
-flowchart LR
-    M[Message] --> H[HMAC / DigestKeyed]
-    K[Secret Key] --> H
-    H --> MAC[MAC Tag]
-    
-    M2[Message] --> V[Verify]
-    K2[Secret Key] --> V
-    MAC --> V
-    V --> Valid[Valid]
-    
-    style M fill:#3c3c5a
-    style K fill:#3c5a3c
-    style H fill:#503c50
-    style MAC fill:#5a4632
-    style M2 fill:#3c3c5a
-    style K2 fill:#3c5a3c
-    style V fill:#503c50
-    style Valid fill:#2a5a2a
-```
+
+<HmacFlow />
 
 ## When to Use It
 

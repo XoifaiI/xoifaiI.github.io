@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Ed25519 (EdDSA)
 
+import EddsaFlow from '@site/src/components/Eddsa/EddsaFlow';
+
 Ed25519 is the modern standard for digital signatures. Fast, secure, and hard to mess up. Use this unless you need post quantum security.
 
 ```luau
@@ -97,31 +99,7 @@ buffer.copy(RecoveredSig, 0, Decrypted, buffer.len(Decrypted) - 64, 64)
 local Valid = EdDSA.Verify(RecoveredMessage, SenderPublic, RecoveredSig)
 ```
 
-```mermaid
-flowchart LR
-    subgraph Sender
-        M[Message] --> Sign
-        Sign --> Combine[Message + Signature]
-        Combine --> Encrypt
-    end
-    
-    Encrypt -->|Ciphertext + Tag| Decrypt
-    
-    subgraph Receiver
-        Decrypt --> Split[Split Message & Signature]
-        Split --> Verify
-        Verify --> Valid
-    end
-    
-    style M fill:#3c3c5a
-    style Sign fill:#3c3c5a
-    style Combine fill:#3c3c5a
-    style Encrypt fill:#503c50
-    style Decrypt fill:#503c50
-    style Split fill:#3c5a3c
-    style Verify fill:#3c5a3c
-    style Valid fill:#5a4632
-```
+<EddsaFlow />
 
 ### Public key authentication
 

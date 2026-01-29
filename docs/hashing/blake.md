@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # BLAKE
 
+import BlakeFlow from '@site/src/components/Blake/BlakeFlow';
+
 Modern hash functions that are faster than SHA2 while having better security. If you are starting fresh and do not need SHA2 compatibility, BLAKE3 is probably what you want.
 
 ## BLAKE2b
@@ -80,31 +82,7 @@ local MacDeriver = Blake3.DeriveKey(MacContext)
 local MacKeyHex, MacKeyRaw = MacDeriver(MasterSecret, 32)
 ```
 
-```mermaid
-flowchart LR
-    MS[Master Secret] --> D1[DeriveKey]
-    MS --> D2[DeriveKey]
-    MS --> D3[DeriveKey]
-    
-    C1[Context: encryption] --> D1
-    C2[Context: mac] --> D2
-    C3[Context: auth] --> D3
-    
-    D1 --> EK[Encryption Key]
-    D2 --> MK[MAC Key]
-    D3 --> AK[Auth Key]
-    
-    style MS fill:#3c5a3c
-    style C1 fill:#3c3c5a
-    style C2 fill:#3c3c5a
-    style C3 fill:#3c3c5a
-    style D1 fill:#503c50
-    style D2 fill:#503c50
-    style D3 fill:#503c50
-    style EK fill:#5a4632
-    style MK fill:#5a4632
-    style AK fill:#5a4632
-```
+<BlakeFlow />
 
 The context string ensures that keys derived for different purposes are cryptographically independent, even from the same master secret. This is cleaner than concatenating purpose strings to your key material.
 

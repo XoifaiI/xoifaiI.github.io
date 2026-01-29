@@ -1,0 +1,21 @@
+.sign-encrypt-flow-wrapper {
+  width: 100%;
+  height: 280px;
+  pointer-events: none;
+}
+
+.sign-encrypt-flow-wrapper .react-flow__handle {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .sign-encrypt-flow-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sign-encrypt-flow-wrapper {
+    height: 180px;
+  }
+}

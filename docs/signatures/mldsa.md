@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # ML DSA (Post Quantum Signatures)
 
+import MldsaFlow from '@site/src/components/Mldsa/MldsaFlow';
+
 Module Lattice Digital Signature Algorithm. This is the NIST post quantum signature standard, formerly known as Dilithium. Use this when you need signatures that will remain secure even against quantum computers.
 ```luau
 local Mldsa = Cryptography.Verification.Mldsa
@@ -134,49 +136,7 @@ Mldsa.ML_DSA_65.Sign(Message, RandomSeed, SecretKey, Context, Signature)
 -- Verifier checks signature
 local IsValid = Mldsa.ML_DSA_65.Verify(Message, PublicKey, Context, Signature)
 ```
-```mermaid
-flowchart LR
-    subgraph Signer
-        Gen[GenerateKeys] --> SK[SecretKey]
-        Gen --> PK[PublicKey]
-        Msg[Message] --> Sign
-        SK --> Sign
-        Sign --> Sig[Signature]
-    end
-    
-    Msg & Sig & PK -->|Send| Verify
-    
-    subgraph Verifier
-        Verify --> Valid
-    end
-    
-    style Gen fill:#3c5a3c
-    style SK fill:#3c5a3c
-    style PK fill:#3c5a3c
-    style Msg fill:#3c3c5a
-    style Sign fill:#503c50
-    style Sig fill:#5a4632
-    style Verify fill:#503c50
-    style Valid fill:#2a5a2a
-```
-### Hybrid Approach
-
-For maximum security, combine classical and post quantum signatures:
-```luau
--- Sign with both algorithms
-local Ed25519Sig = EdDSA.Sign(Message, EdSecret, EdPublic)
-
-local MlDsaSig = buffer.create(Mldsa.ML_DSA_65.SigByteLen)
-Mldsa.ML_DSA_65.Sign(Message, CSPRNG.RandomBytes(32), MlDsaSecret, Context, MlDsaSig)
-
--- Verify both
-local Valid = EdDSA.Verify(Message, EdPublic, Ed25519Sig)
-    and Mldsa.ML_DSA_65.Verify(Message, MlDsaPublic, Context, MlDsaSig)
-```
-
-This protects against classical attacks (via ML DSA), potential weaknesses in lattice cryptography (via Ed25519), and unknown attacks on either scheme.
-
-The downside is doubled signature size and verification time.
+<MldsaFlow/>
 
 ## Performance Considerations
 

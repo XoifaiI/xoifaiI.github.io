@@ -1,0 +1,21 @@
+.mldsa-flow-wrapper {
+  width: 100%;
+  height: 280px;
+  pointer-events: none;
+}
+
+.mldsa-flow-wrapper .react-flow__handle {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .mldsa-flow-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mldsa-flow-wrapper {
+    height: 180px;
+  }
+}

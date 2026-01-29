@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # ML KEM (Post Quantum Key Exchange)
 
+import MlkemFlow from '@site/src/components/Mlkem/MlkemFlow';
+
 Module Lattice Key Encapsulation Mechanism. This is the NIST post quantum key exchange standard, formerly known as Kyber. Use this to establish shared secrets that will remain secure against quantum computers.
 
 ```luau
@@ -127,131 +129,7 @@ local SharedSecret = MlKem.MLKEM_768.Decapsulate(Ciphertext, SecretKey)
 local Data = AEAD.Decrypt(EncryptedData, SharedSecret, Nonce, Tag)
 ```
 
-```mermaid
-flowchart LR
-    subgraph Receiver
-        Gen[GenerateKeys] --> PK[PublicKey]
-        Gen --> SK[SecretKey]
-    end
-    
-    PK --> Enc
-    
-    subgraph Sender
-        Enc[Encapsulate] --> SS1[SharedSecret]
-        Enc --> CT[Ciphertext]
-        SS1 --> E[Encrypt]
-    end
-    
-    CT --> Dec
-    SK --> Dec
-    
-    subgraph Receiver2[" "]
-        Dec[Decapsulate] --> SS2[SharedSecret]
-        SS2 --> D[Decrypt]
-    end
-    
-    style Gen fill:#3c5a3c
-    style PK fill:#3c5a3c
-    style SK fill:#3c5a3c
-    style Enc fill:#3c3c5a
-    style SS1 fill:#3c3c5a
-    style CT fill:#5a4632
-    style E fill:#503c50
-    style Dec fill:#3c5a3c
-    style SS2 fill:#3c5a3c
-    style D fill:#2a5a2a
-```
-
-### Hybrid Key Exchange
-
-Combine ML KEM with X25519 for defense in depth:
-
-```luau
--- Both parties have X25519 and ML KEM keys
-
--- Classical X25519 exchange
-local X25519Shared1, _ = X25519.Exchange(MyMaskedKey, TheirX25519Public)
-
--- Post quantum ML KEM exchange (initiator side)
-local KemMessage = CSPRNG.RandomBytes(32)
-local KemCiphertext, KemSecret = MlKem.MLKEM_768.Encapsulate(KemMessage, TheirMlKemPublic)
-
--- Combine both secrets
-local CombinedInput = buffer.create(64)
-buffer.copy(CombinedInput, 0, X25519Shared1)
-buffer.copy(CombinedInput, 32, KemSecret)
-
-local Context = buffer.fromstring("hybrid key exchange")
-local FinalDeriver = Blake3.DeriveKey(Context)
-local _, FinalKey = FinalDeriver(CombinedInput, 32)
-```
-
-The responder side:
-
-```luau
-local X25519Shared1, _ = X25519.Exchange(MyMaskedKey, TheirX25519Public)
-local KemSecret = MlKem.MLKEM_768.Decapsulate(KemCiphertext, MyMlKemSecret)
-
-local CombinedInput = buffer.create(64)
-buffer.copy(CombinedInput, 0, X25519Shared1)
-buffer.copy(CombinedInput, 32, KemSecret)
-
-local Context = buffer.fromstring("hybrid key exchange")
-local FinalDeriver = Blake3.DeriveKey(Context)
-local _, FinalKey = FinalDeriver(CombinedInput, 32)
-```
-
-This protects against classical attacks (via ML KEM) and potential weaknesses in lattice cryptography (via X25519).
-
-```mermaid
-flowchart LR
-    subgraph Initiator
-        X1[X25519.Exchange] --> S1[X25519Shared]
-        KM[RandomBytes] --> Enc[ML KEM Encapsulate]
-        Enc --> KS1[KemSecret]
-        Enc --> CT[Ciphertext]
-    end
-    
-    CT -->|Send| Dec
-    
-    subgraph Responder
-        X2[X25519.Exchange] --> S2[X25519Shared]
-        Dec[ML KEM Decapsulate] --> KS2[KemSecret]
-    end
-    
-    subgraph Combine["Key Derivation"]
-        S1 --> C1[Combine 64 bytes]
-        KS1 --> C1
-        C1 --> B1[Blake3.DeriveKey]
-        B1 --> FK1[FinalKey]
-        
-        S2 --> C2[Combine 64 bytes]
-        KS2 --> C2
-        C2 --> B2[Blake3.DeriveKey]
-        B2 --> FK2[FinalKey]
-    end
-    
-    FK1 -.- Same[Same Key]
-    FK2 -.- Same
-    
-    style X1 fill:#3c3c5a
-    style S1 fill:#3c3c5a
-    style KM fill:#3c5a3c
-    style Enc fill:#3c5a3c
-    style KS1 fill:#3c5a3c
-    style CT fill:#5a4632
-    style X2 fill:#3c3c5a
-    style S2 fill:#3c3c5a
-    style Dec fill:#3c5a3c
-    style KS2 fill:#3c5a3c
-    style C1 fill:#503c50
-    style C2 fill:#503c50
-    style B1 fill:#503c50
-    style B2 fill:#503c50
-    style FK1 fill:#5a5a32
-    style FK2 fill:#5a5a32
-    style Same fill:#2a5a2a
-```
+<MlkemFlow/>
 
 ## When to Use ML KEM
 

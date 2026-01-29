@@ -13,6 +13,7 @@ const config: Config = {
 
   url: 'https://xoifail.github.io',
   baseUrl: '/',
+
   organizationName: 'XoifaiI',
   projectName: 'xoifaiI.github.io',
 
@@ -21,10 +22,6 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
-  },
-
-  markdown: {
-    mermaid: true,
   },
 
   presets: [
@@ -44,7 +41,6 @@ const config: Config = {
   ],
 
   themes: [
-    '@docusaurus/theme-mermaid',
     [
       '@easyops-cn/docusaurus-search-local',
       {
@@ -107,7 +103,7 @@ const config: Config = {
             {
               label: 'Pesde Package',
               href: 'https://pesde.dev/packages/daily3014/cryptography',
-            }
+            },
           ],
         },
       ],

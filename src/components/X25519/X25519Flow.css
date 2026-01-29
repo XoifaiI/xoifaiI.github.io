@@ -1,0 +1,21 @@
+.x25519-flow-wrapper {
+  width: 100%;
+  height: 280px;
+  pointer-events: none;
+}
+
+.x25519-flow-wrapper .react-flow__handle {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .x25519-flow-wrapper {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .x25519-flow-wrapper {
+    height: 180px;
+  }
+}

@@ -1,0 +1,21 @@
+.blake-flow-wrapper {
+  width: 100%;
+  height: 320px;
+  pointer-events: none;
+}
+
+.blake-flow-wrapper .react-flow__handle {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .blake-flow-wrapper {
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blake-flow-wrapper {
+    height: 220px;
+  }
+}

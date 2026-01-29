@@ -1,0 +1,21 @@
+.mlkem-flow-wrapper {
+  width: 100%;
+  height: 300px;
+  pointer-events: none;
+}
+
+.mlkem-flow-wrapper .react-flow__handle {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .mlkem-flow-wrapper {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mlkem-flow-wrapper {
+    height: 200px;
+  }
+}
