@@ -68,7 +68,7 @@ function FeaturesSection() {
       <FeatureCard
         icon={Zap}
         title="Blazing Fast"
-        description="Optimized for Luau with native compilation. The fastest pure-Luau crypto library."
+        description="Optimized for Luau with native compilation. Includes algorithmic optimizations like shoup tables."
       />
       <FeatureCard
         icon={Shield}
